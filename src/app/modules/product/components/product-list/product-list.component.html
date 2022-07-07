@@ -1,1 +1,5 @@
-<p>product-list works!</p>
+<div class="container">
+  <ng-container *ngFor="let p of products">
+    <app-product-card [product]="p"></app-product-card>
+  </ng-container>
+</div>

@@ -11,6 +11,16 @@ li {
   margin: 15px;
 }
 
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:focus {
+  color: inherit;
+}
+
 .active {
-  color: red;
+  font-weight: bolder;
+  text-decoration: underline;
 }
