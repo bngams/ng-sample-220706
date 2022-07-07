@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { ExponentialStrengthPipe } from './pipes/exponential-strength.pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './components/header/header.component';
-import { MaterialModule } from './material.module';
+import { MaterialModule } from './modules/shared/material.module';
 import { HomeComponent } from './pages/home/home.component';
 import { GetStartedComponent, GetStartedSubComponent } from './pages/get-started/get-started.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
