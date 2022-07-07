@@ -352,7 +352,7 @@
 
   <!--  -->
   <h2>Sub root component</h2>
-  <app-sub-root></app-sub-root>
+  <app-sub-root [valueFromParent]="svgBgColor" (myCustomEvent)="handleCustomEvent()"></app-sub-root>
 
   <h2>Interpolation {{ '{{expression js}}' }}</h2>
   <p>This is the title variable from the class: {{ title }}</p>
@@ -380,6 +380,34 @@
     <button type="button" (click)="toggleIconColor()">Toggle Icon Color</button>
   </p>
 
+  <h2>Property Binding: static html property</h2>
+  <button type="button" disabled>Basic real disabled button</button>
+  <button type="button" disabled="{{isDisabled}}">Disabled button with disabled="interpolation"</button>
+  <button type="button" [disabled]="isDisabled">Disabled button with real property binding [disabled]</button>
+  <button type="button" (click)="toggleBtnState()">Toggle button state</button>
+
+  <h2>Attributes Directives</h2>
+  <!-- property binding -->
+  <p [class]=""></p>
+  <!-- directives [ng...] d'attribut -->
+  <!-- { classname: boolean } -->
+  <p [ngClass]="{ disabled: isDisabled, otherClass: true}">
+    Some text
+  </p>
+
+  <!-- hidden -->
+  <p [hidden]="isDisabled">
+    Some dynamic text
+  </p>
+
+  <h2>Structure Directives</h2>
+  <p *ngIf="!isDisabled">
+    Some dynamic text
+  </p>
+
+  <ul>
+    <li *ngFor="let w of words">{{w}}</li>
+  </ul>
 </div>
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
