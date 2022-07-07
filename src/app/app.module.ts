@@ -13,15 +13,15 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 const COMPONENTS = [
   AppComponent,
-  HeaderComponent
+  HeaderComponent,
+  GetStartedSubComponent,
 ];
 
 const COMPONENTS_PAGES = [
     HomeComponent,
     GetStartedComponent,
     NotFoundComponent,
-    GetStartedSubComponent,
-]
+];
 
 const PIPES = [
   ExponentialStrengthPipe

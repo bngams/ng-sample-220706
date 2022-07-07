@@ -1,0 +1,16 @@
+.spacer {
+  flex: 1 1 auto;
+}
+
+ul {
+  list-style-type: none;
+  display: flex;
+}
+
+li {
+  margin: 15px;
+}
+
+.active {
+  color: red;
+}
