@@ -12,7 +12,7 @@ export class AppComponent {
   imgUrl = 'https://picsum.photos/200/300?random=1';
   imgName = 'Lorem picsum';
   isDisabled = true;
-  words = ['word1', 'word2', 'word3'];
+  words = ['someword1', 'word2', 'someword3'];
 
   constructor() {
   }

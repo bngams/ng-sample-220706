@@ -401,13 +401,27 @@
   </p>
 
   <h2>Structure Directives</h2>
-  <p *ngIf="!isDisabled">
+  <p *ngIf="!isDisabled else otherTemplate">
     Some dynamic text
   </p>
 
+  <ng-template [ngIf]="isDisabled">
+    <p>Some dynamic text</p>
+  </ng-template>
+
+  <ng-template #otherTemplate>
+    <p>*ngIf else template</p>
+  </ng-template>
+
   <ul>
-    <li *ngFor="let w of words">{{w}}</li>
+    <ng-container *ngFor="let w of words" >
+      <li *ngIf="w.length > 5">{{w}}</li>
+    </ng-container>
   </ul>
+
+  <h2>Template variable</h2>
+  <input type="text" name="myInput" id="" value="default" #myInput>
+  Acces to #myInput {{ myInput.value }}
 </div>
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
