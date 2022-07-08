@@ -7,6 +7,7 @@ import { ProductListComponent } from './components/product-list/product-list.com
 import { ProductFormComponent } from './components/product-form/product-form.component';
 import { ProductDashboardComponent } from './pages/product-dashboard/product-dashboard.component';
 import { SharedModule } from '../shared/shared.module';
+import { ProductService } from './services/product.service';
 
 
 @NgModule({
@@ -20,6 +21,6 @@ import { SharedModule } from '../shared/shared.module';
     CommonModule,
     ProductRoutingModule,
     SharedModule
-  ]
+  ],
 })
 export class ProductModule { }

@@ -4,7 +4,7 @@ import { ProductDashboardComponent } from './pages/product-dashboard/product-das
 
 const routes: Routes = [
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
-  { path: 'dashboard', component: ProductDashboardComponent},
+  { path: 'dashboard', component: ProductDashboardComponent}
 ];
 
 @NgModule({

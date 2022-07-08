@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { PRODUCTS } from '../../mock/products-data.mock';
 import { Product } from '../../models/product';
+import { ProductService } from '../../services/product.service';
+import { ProductCardComponent } from '../product-card/product-card.component';
 
 @Component({
   selector: 'app-product-list',
@@ -8,19 +10,29 @@ import { Product } from '../../models/product';
   styleUrls: ['./product-list.component.scss']
 })
 export class ProductListComponent implements OnInit {
-  products!: Product[];
+  @Input()
+  productsFromDashboard!: Product[];
 
-  constructor() { }
+  products: Product[] = [];
 
-  ngOnInit(): void {
-    this.initProductsFromMock();
+  @ViewChildren(ProductCardComponent)
+  private productCardChildren!: QueryList<ProductCardComponent>;
+
+  constructor(private productService: ProductService) {
   }
 
-  /**
-   * Use fake data to init products
-   */
-  initProductsFromMock() {
-    this.products = PRODUCTS;
+  ngOnInit(): void {
+    // this.initFromInput();
+    this.initFromService();
+    console.log("Product Service Injected in ProductListComponent", this.productService.proofOfInject);
+  }
+
+  private initFromInput(): void {
+    this.products = this.productsFromDashboard;
+  }
+
+  private initFromService(): void {
+    this.products = this.productService.products;
   }
 
 }
